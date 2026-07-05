@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuadraAI — AI-Powered Financial Intelligence Platform</title>
+  <meta name="description" content="QuadraAI is India's most trusted AI financial assistant. Learn finance, analyze markets, understand investments, and plan your financial future with responsible AI." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="scanlines">
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-brand">
+      <a href="index.html" class="nav-logo">QuadraAI</a>
+      <span class="nav-tag">Financial Intelligence Platform</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#early-access">Early Access</a></li>
+    </ul>
+    <a href="https://quadraforge.in" target="_blank" rel="noopener" class="nav-forge-link">
+      <span class="nav-forge-label">By</span>
+      <span class="nav-forge-name">QuadraForge Finance</span>
+      <span class="nav-forge-arrow">↗</span>
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#agents" onclick="closeMobileNav()">Agents</a>
+    <a href="#features" onclick="closeMobileNav()">Features</a>
+    <a href="#roadmap" onclick="closeMobileNav()">Roadmap</a>
+    <a href="#early-access" onclick="closeMobileNav()">Early Access</a>
+    <a href="https://quadraforge.in" target="_blank" class="mobile-forge-link">QuadraForge Finance ↗</a>
+  </div>
+
+  <!-- ── TICKER ── -->
+  <div class="ticker-bar">
+    <div class="ticker-inner" id="tickerInner">
+      <!-- Static fallback, replaced by live data -->
+      <div class="ticker-item"><span class="t-sym">NIFTY 50</span><span class="t-val" id="t-NSEI">—</span><span class="t-chg" id="tc-NSEI">…</span></div>
+      <div class="ticker-item"><span class="t-sym">SENSEX</span><span class="t-val" id="t-BSESN">—</span><span class="t-chg" id="tc-BSESN">…</span></div>
+      <div class="ticker-item"><span class="t-sym">NIFTY BANK</span><span class="t-val" id="t-NSEBANK">—</span><span class="t-chg" id="tc-NSEBANK">…</span></div>
+      <div class="ticker-item"><span class="t-sym">RELIANCE</span><span class="t-val" id="t-RELIANCE">—</span><span class="t-chg" id="tc-RELIANCE">…</span></div>
+      <div class="ticker-item"><span class="t-sym">TCS</span><span class="t-val" id="t-TCS">—</span><span class="t-chg" id="tc-TCS">…</span></div>
+      <div class="ticker-item"><span class="t-sym">INFY</span><span class="t-val" id="t-INFY">—</span><span class="t-chg" id="tc-INFY">…</span></div>
+      <div class="ticker-item"><span class="t-sym">HDFC BANK</span><span class="t-val" id="t-HDFCBANK">—</span><span class="t-chg" id="tc-HDFCBANK">…</span></div>
+      <div class="ticker-item"><span class="t-sym">USD/INR</span><span class="t-val" id="t-USDINR">—</span><span class="t-chg" id="tc-USDINR">…</span></div>
+      <div class="ticker-item"><span class="t-sym">GOLD</span><span class="t-val" id="t-GOLD">—</span><span class="t-chg" id="tc-GOLD">…</span></div>
+      <div class="ticker-item"><span class="t-sym">CRUDE OIL</span><span class="t-val" id="t-OIL">—</span><span class="t-chg" id="tc-OIL">…</span></div>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero terminal-grid-bg">
+    <div class="hero-glow"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="hero-label fade-up-1">
+        <span class="live-dot"></span>
+        AI-Powered Financial Intelligence · India
+      </div>
+      <h1 class="fade-up-2">
+        <span class="gold-text">QuadraAI</span>
+      </h1>
+      <p class="hero-sub fade-up-2">Your AI Financial Intelligence Platform</p>
+      <p class="fade-up-3">
+        QuadraAI is not a trading bot or generic chatbot — it is a purpose-built financial companion
+        that educates, analyzes, and simplifies finance through responsible AI.
+        Built for students, investors, and professionals across India.
+      </p>
+      <div class="hero-btns fade-up-4">
+        <a href="#early-access" class="btn-primary">⚡ Request Early Access</a>
+        <a href="#agents" class="btn-secondary">Explore Features →</a>
+      </div>
+      <div class="hero-stats fade-up-4">
+        <div class="stat">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">AI Agents</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Features</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">16+</span>
+          <span class="stat-label">Roadmap Modules</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Financial Queries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <span class="section-label">// 01 — About</span>
+      <h2 class="section-title">What is <span class="gold-text">QuadraAI?</span></h2>
+      <p class="section-desc">
+        An AI-powered Financial Intelligence Platform developed under QuadraForge Finance —
+        combining artificial intelligence, financial analysis, market data, and educational guidance
+        into one unified assistant.
+      </p>
+
+      <div class="about-grid">
+        <div>
+          <div class="philosophy-quote">
+            <span class="q-label">Instead of saying</span>
+            <p>"Buy this stock."</p>
+            <p class="q-answer">QuadraAI explains:<br>
+            <em>"Here is how this company works, here are the risks, this is how to evaluate it,
+            and here are the factors you should consider before investing."</em></p>
+          </div>
+          <div style="margin-top:24px;">
+            <div class="about-panel">
+              <div class="about-panel-title">Core Philosophy</div>
+              <p style="font-size:13px;color:var(--bb-text-dim);line-height:1.8;">
+                <strong style="color:var(--bb-orange);">Education first.</strong><br>
+                Recommendations never.<br><br>
+                QuadraAI focuses on building financial literacy and informed decision-making rather
+                than promoting speculation or blind recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="about-panel" style="margin-bottom:20px;">
+            <div class="about-panel-title">Vision</div>
+            <p style="font-size:13px;color:var(--bb-text-dim);line-height:1.8;">
+              Democratize financial intelligence by making AI-powered financial education available
+              to every student, investor, and professional across India.
+            </p>
+          </div>
+          <div class="about-panel" style="margin-bottom:20px;">
+            <div class="about-panel-title">Mission — Help users</div>
+            <div class="mission-items">
+              <div class="mission-item">Learn finance</div>
+              <div class="mission-item">Analyze markets</div>
+              <div class="mission-item">Understand investments</div>
+              <div class="mission-item">Plan finances &amp; build wealth</div>
+              <div class="mission-item">Make informed decisions through responsible AI</div>
+            </div>
+          </div>
+          <div class="about-panel">
+            <div class="about-panel-title">Developed By</div>
+            <p style="font-size:13px;color:var(--bb-text-dim);line-height:1.8;">
+              <a href="https://quadraforge.in" target="_blank" rel="noopener" style="color:var(--bb-orange);text-decoration:none;font-weight:700;">QuadraForge Finance ↗</a><br>
+              Founder &amp; Lead Developer: <span style="color:var(--bb-text);">Sai Sanjay</span><br><br>
+              Architected and built entirely in-house — AI orchestration, multi-agent architecture,
+              backend APIs, frontend, financial logic, prompt engineering, deployment &amp; product design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AGENTS ── -->
+  <section id="agents">
+    <div class="container">
+      <div class="agents-header">
+        <span class="section-label">// 02 — Multi-Agent Architecture</span>
+        <h2 class="section-title">Specialized <span class="gold-text">AI Agents</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          Instead of one large AI prompt, QuadraAI uses specialized agents — different experts
+          answering different financial questions for higher quality responses.
+        </p>
+      </div>
+
+      <div class="agents-grid">
+        <div class="agent-card" data-color="orange">
+          <span class="agent-icon">🧠</span>
+          <div class="agent-name">General AI Agent</div>
+          <p class="agent-desc">Handles everyday financial conversations, budgeting, money management, saving strategies, financial literacy, and career advice.</p>
+          <div class="agent-tags">
+            <span class="tag">Budgeting</span>
+            <span class="tag">Saving</span>
+            <span class="tag">Financial Literacy</span>
+            <span class="tag">Career Advice</span>
+            <span class="tag">Money Management</span>
+          </div>
+        </div>
+
+        <div class="agent-card" data-color="cyan">
+          <span class="agent-icon">🔬</span>
+          <div class="agent-name">Research Agent</div>
+          <p class="agent-desc">Deep dives into company research, industry analysis, financial concepts, market explanations, investment education, and economic analysis.</p>
+          <div class="agent-tags">
+            <span class="tag">Company Research</span>
+            <span class="tag">Industry Analysis</span>
+            <span class="tag">Investment Ed.</span>
+            <span class="tag">Economic Analysis</span>
+          </div>
+        </div>
+
+        <div class="agent-card" data-color="green">
+          <span class="agent-icon">📊</span>
+          <div class="agent-name">Portfolio Agent</div>
+          <p class="agent-desc">Reviews portfolios, assists with asset allocation, goal planning, risk analysis, investment diversification, and financial planning.</p>
+          <div class="agent-tags">
+            <span class="tag">Portfolio Review</span>
+            <span class="tag">Asset Allocation</span>
+            <span class="tag">Risk Analysis</span>
+            <span class="tag">Goal Planning</span>
+          </div>
+        </div>
+
+        <div class="agent-card" data-color="red">
+          <span class="agent-icon">📰</span>
+          <div class="agent-name">News Agent</div>
+          <p class="agent-desc">Delivers financial news, market developments, economic updates, company announcements, and sentiment explanations. Live APIs coming soon.</p>
+          <div class="agent-tags">
+            <span class="tag">Market News</span>
+            <span class="tag">Company Alerts</span>
+            <span class="tag">Sentiment</span>
+            <span class="tag">Economic Updates</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orchestrator -->
+      <div class="orchestrator-band">
+        <div class="orch-icon">⚡</div>
+        <div>
+          <div class="orch-label">Intelligent AI Orchestrator</div>
+          <div class="orch-title">Automatic Agent Routing</div>
+          <p class="orch-desc">
+            One of QuadraAI's biggest strengths. Instead of users selecting agents manually,
+            the AI orchestrator automatically decides which agent to use, which tools are required,
+            and whether market data, calculations, research, or live news is needed — providing
+            a completely seamless experience.
+          </p>
+          <div class="orch-features">
+            <span class="orch-chip">Agent Selection</span>
+            <span class="orch-chip">Tool Routing</span>
+            <span class="orch-chip">Market Data</span>
+            <span class="orch-chip">Calculations</span>
+            <span class="orch-chip">Research Queries</span>
+            <span class="orch-chip">Live News</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section id="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label">// 03 — Current Features</span>
+        <h2 class="section-title">What <span class="gold-text">QuadraAI</span> Can Do Today</h2>
+        <p class="section-desc" style="margin:0 auto;">
+          A rich set of financial intelligence capabilities available right now,
+          with a rapidly expanding roadmap ahead.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <div class="feature-name">Financial Q&amp;A</div>
+          <p class="feature-desc">Ask any financial question and get detailed, educational answers.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📚</div>
+          <div class="feature-name">Investment Education</div>
+          <p class="feature-desc">Learn stocks, mutual funds, bonds, and investment concepts step by step.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <div class="feature-name">Budget Planning</div>
+          <p class="feature-desc">Build personalized budgets and track your financial health.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-name">Goal Planning</div>
+          <p class="feature-desc">Set financial goals and get structured plans to achieve them.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📈</div>
+          <div class="feature-name">Portfolio Analysis</div>
+          <p class="feature-desc">Get your portfolio reviewed with diversification insights.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚠️</div>
+          <div class="feature-name">Risk Awareness</div>
+          <p class="feature-desc">Understand risk profiles before making investment decisions.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏢</div>
+          <div class="feature-name">Company Research</div>
+          <p class="feature-desc">Deep-dive into companies, business models, and fundamentals.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧮</div>
+          <div class="feature-name">Financial Calculations</div>
+          <p class="feature-desc">SIP, EMI, compound interest, CAGR, and more — calculated instantly.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏖️</div>
+          <div class="feature-name">Retirement Planning</div>
+          <p class="feature-desc">Plan your retirement corpus with inflation-adjusted projections.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <div class="feature-name">Market Terminology</div>
+          <p class="feature-desc">Demystify PE ratios, EPS, ROE, ROCE, and every market term.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🗂️</div>
+          <div class="feature-name">Structured Reports</div>
+          <p class="feature-desc">Professional, markdown-formatted financial reports — not plain text.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧠</div>
+          <div class="feature-name">Conversation Memory</div>
+          <p class="feature-desc">QuadraAI remembers context within sessions for coherent conversations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ROADMAP ── -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="roadmap-header">
+        <span class="section-label">// 04 — Future Roadmap</span>
+        <h2 class="section-title">What's <span class="gold-text">Coming Next</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          QuadraAI is evolving into a comprehensive financial operating system.
+          Here's what's on the horizon.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">📺 QuadraTerminal</div>
+          <ul class="roadmap-items">
+            <li>Professional market dashboard</li>
+            <li>Live charts &amp; watchlists</li>
+            <li>Technical indicators</li>
+            <li>Market screeners &amp; heatmaps</li>
+            <li>Sector analysis</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">🏦 Personal CFO</div>
+          <ul class="roadmap-items">
+            <li>Income &amp; expense tracking</li>
+            <li>Cashflow monitoring</li>
+            <li>Net worth tracker</li>
+            <li>Financial health score</li>
+            <li>Monthly financial reports</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">📉 Stock Screener</div>
+          <ul class="roadmap-items">
+            <li>PE, PB, ROE, ROCE filters</li>
+            <li>Market cap &amp; dividend yield</li>
+            <li>Revenue &amp; earnings growth</li>
+            <li>Debt ratio screening</li>
+            <li>Fundamental analysis engine</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">📐 Mutual Fund Analyzer</div>
+          <ul class="roadmap-items">
+            <li>Fund comparison</li>
+            <li>Rolling returns analysis</li>
+            <li>Risk metrics &amp; expense ratios</li>
+            <li>Fund overlap detection</li>
+            <li>Portfolio similarity scoring</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">📑 Document Intelligence</div>
+          <ul class="roadmap-items">
+            <li>Upload bank statements</li>
+            <li>Annual reports analysis</li>
+            <li>Mutual fund statements</li>
+            <li>Tax documents review</li>
+            <li>Portfolio PDF parsing</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-title">🌍 Multilingual &amp; Voice</div>
+          <ul class="roadmap-items">
+            <li>Voice financial coaching</li>
+            <li>Hindi, Telugu, Tamil</li>
+            <li>Kannada, Marathi &amp; more</li>
+            <li>AI Learning Mode with quizzes</li>
+            <li>AI Financial Coach — daily insights</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUDIENCE ── -->
+  <section id="audience">
+    <div class="container">
+      <div class="audience-header">
+        <span class="section-label">// 05 — Who Is It For</span>
+        <h2 class="section-title">Built for <span class="gold-text">Everyone</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          Whether you're just starting your financial journey or managing a complex portfolio,
+          QuadraAI adapts to your level and needs.
+        </p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🎓</div>
+          <div class="audience-name">Students</div>
+          <p class="audience-desc">Learn personal finance and investing from scratch with guided, educational explanations.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">💼</div>
+          <div class="audience-name">Young Professionals</div>
+          <p class="audience-desc">Budgeting, investing, tax basics, and comprehensive financial planning.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🌱</div>
+          <div class="audience-name">First-Time Investors</div>
+          <p class="audience-desc">Understand how markets work before putting your money in — no jargon.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📊</div>
+          <div class="audience-name">Experienced Investors</div>
+          <p class="audience-desc">Research companies, analyze portfolios, and compare investment opportunities.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">⚡</div>
+          <div class="audience-name">Traders</div>
+          <p class="audience-desc">Market insights, news intelligence, and technical analysis (coming soon).</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏫</div>
+          <div class="audience-name">Educators</div>
+          <p class="audience-desc">Use QuadraAI as an AI-powered financial teaching and learning assistant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY ── -->
+  <section id="why">
+    <div class="container">
+      <div class="why-header">
+        <span class="section-label">// 06 — Why QuadraAI</span>
+        <h2 class="section-title">Why <span class="gold-text">Choose Us</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          QuadraAI is built differently — from its architecture to its philosophy.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-num">01</span>
+          <div>
+            <div class="why-item-title">Purpose Built</div>
+            <p class="why-item-desc">Not a generic chatbot. Built specifically for finance — every feature, every response, every agent is designed around financial intelligence.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-num">02</span>
+          <div>
+            <div class="why-item-title">Multi-Agent Intelligence</div>
+            <p class="why-item-desc">Different specialists answer different questions. Produces higher quality, more accurate responses than one massive AI prompt.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-num">03</span>
+          <div>
+            <div class="why-item-title">Education First</div>
+            <p class="why-item-desc">Focuses on learning and understanding rather than giving blind recommendations or promoting speculation.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-num">04</span>
+          <div>
+            <div class="why-item-title">Professional Reports</div>
+            <p class="why-item-desc">Instead of simple one-liner answers, QuadraAI generates structured, professional financial reports in markdown format.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-num">05</span>
+          <div>
+            <div class="why-item-title">Scalable &amp; Modular</div>
+            <p class="why-item-desc">Easy to expand from 4 agents today to 20+ agents tomorrow. New tools, APIs, and financial products can be added at any time.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-num">06</span>
+          <div>
+            <div class="why-item-title">Fast &amp; Low Latency</div>
+            <p class="why-item-desc">Groq-powered inference for real-time responses. REST architecture ready to power web, mobile, browser extensions, and desktop apps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EARLY ACCESS ── -->
+  <section id="early-access">
+    <div class="early-access-glow"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="early-access-badge">
+        <span class="live-dot"></span>
+        Now Accepting Early Access Requests
+      </div>
+      <span class="section-label">// 07 — Early Access</span>
+      <h2 class="section-title">Get <span class="gold-text">Early Access</span></h2>
+      <p class="section-desc">
+        QuadraAI is currently in active development and is available now for early access users.
+        Reach out directly to join the waitlist, collaborate, or give feedback.
+      </p>
+
+      <!-- Pricing callout -->
+      <div class="pricing-callout">
+        <div class="pricing-badge">Limited Time Offer</div>
+        <div class="pricing-line">
+          Early access pricing starts at
+          <span class="pricing-amount">₹399<span class="pricing-period">/month</span></span>
+        </div>
+        <p class="pricing-note">Lock in the founder's rate before launch. Price will increase as we exit early access.</p>
+      </div>
+
+      <div style="margin:40px 0 28px;">
+        <div class="email-card">
+          <div>
+            <div class="email-label">Reach out for early access</div>
+            <div class="email-addr">saisanjay138@gmail.com</div>
+          </div>
+          <a href="mailto:saisanjay138@gmail.com?subject=QuadraAI Early Access Request&body=Hi Sai Sanjay,%0A%0AI would like to request early access to QuadraAI.%0A%0AName:%0ABackground:%0AHow I plan to use QuadraAI:%0A%0AThanks!" class="email-btn">
+            Request Access →
+          </a>
+        </div>
+      </div>
+
+      <p class="early-note">
+        Include your name, background (student / investor / professional), and how you plan to use QuadraAI.
+        Early access users get priority onboarding and direct feedback channels with the founder.
+        <br><br>
+        Built by <strong style="color:var(--bb-orange);">Sai Sanjay</strong> ·
+        <a href="https://quadraforge.in" target="_blank" rel="noopener" style="color:var(--bb-orange);text-decoration:none;">QuadraForge Finance ↗</a> · India
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">QuadraAI</div>
+        <div class="footer-by">by <a href="https://quadraforge.in" target="_blank" rel="noopener" style="color:var(--bb-orange);text-decoration:none;">QuadraForge Finance ↗</a> · Founder: Sai Sanjay</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#agents">Agents</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#early-access">Early Access</a></li>
+        <li><a href="https://quadraforge.in" target="_blank" rel="noopener">QuadraForge.in ↗</a></li>
+      </ul>
+      <div class="footer-copy">© 2025 QuadraForge Finance. All rights reserved. · Education first. Recommendations never.</div>
+    </div>
+  </footer>
+
+  <!-- ── LIVE TICKER SCRIPT ── -->
+  <script>
+    /* ── Mobile Nav ── */
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      navToggle.classList.remove('open');
+    }
+
+    /* ── Live Stock Prices (Yahoo Finance public API) ── */
+    const SYMBOLS = {
+      'NSEI':     { el: 't-NSEI',     chg: 'tc-NSEI',     label: 'NIFTY 50',   sym: '^NSEI' },
+      'BSESN':    { el: 't-BSESN',    chg: 'tc-BSESN',    label: 'SENSEX',     sym: '^BSESN' },
+      'NSEBANK':  { el: 't-NSEBANK',  chg: 'tc-NSEBANK',  label: 'NIFTY BANK', sym: '^NSEBANK' },
+      'RELIANCE': { el: 't-RELIANCE', chg: 'tc-RELIANCE', label: 'RELIANCE',   sym: 'RELIANCE.NS' },
+      'TCS':      { el: 't-TCS',      chg: 'tc-TCS',      label: 'TCS',        sym: 'TCS.NS' },
+      'INFY':     { el: 't-INFY',     chg: 'tc-INFY',     label: 'INFY',       sym: 'INFY.NS' },
+      'HDFCBANK': { el: 't-HDFCBANK', chg: 'tc-HDFCBANK', label: 'HDFC BANK',  sym: 'HDFCBANK.NS' },
+      'USDINR':   { el: 't-USDINR',   chg: 'tc-USDINR',   label: 'USD/INR',    sym: 'USDINR=X' },
+      'GOLD':     { el: 't-GOLD',     chg: 'tc-GOLD',     label: 'GOLD',       sym: 'GC=F' },
+      'OIL':      { el: 't-OIL',      chg: 'tc-OIL',      label: 'CRUDE OIL',  sym: 'CL=F' },
+    };
+
+    function fmtPrice(v, sym) {
+      if (sym === 'USDINR=X') return v.toFixed(2);
+      if (v >= 10000) return v.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+      return v.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function applyTicker(data) {
+      Object.keys(SYMBOLS).forEach(key => {
+        const info = SYMBOLS[key];
+        const q = data[info.sym];
+        if (!q) return;
+        const priceEl = document.getElementById(info.el);
+        const chgEl   = document.getElementById(info.chg);
+        if (priceEl) priceEl.textContent = fmtPrice(q.price, info.sym);
+        if (chgEl) {
+          const sign = q.chgPct >= 0 ? '▲' : '▼';
+          chgEl.textContent = `${sign} ${Math.abs(q.chgPct).toFixed(2)}%`;
+          chgEl.className = 't-chg ' + (q.chgPct >= 0 ? 't-up' : 't-dn');
+        }
+      });
+      duplicateTicker();
+    }
+
+    function duplicateTicker() {
+      const inner = document.getElementById('tickerInner');
+      if (!inner) return;
+      // Remove existing duplicates first, then clone only the originals
+      inner.querySelectorAll('.ticker-dup').forEach(e => e.remove());
+      const origItems = Array.from(inner.querySelectorAll('.ticker-item:not(.ticker-dup)'));
+      origItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.classList.add('ticker-dup');
+        inner.appendChild(clone);
+      });
+    }
+
+    async function fetchLivePrices() {
+      const yahooSymbols = Object.values(SYMBOLS).map(s => s.sym).join(',');
+      const yahooURL = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(yahooSymbols)}&fields=regularMarketPrice,regularMarketChangePercent`;
+      // Use allorigins CORS proxy so this works from a plain HTML file
+      const proxyURL = `https://api.allorigins.win/get?url=${encodeURIComponent(yahooURL)}`;
+
+      try {
+        const res = await fetch(proxyURL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('proxy error');
+        const json = await res.json();
+        const parsed = JSON.parse(json.contents);
+        const quotes = parsed?.quoteResponse?.result || [];
+        if (!quotes.length) throw new Error('no quotes');
+
+        const data = {};
+        quotes.forEach(q => {
+          data[q.symbol] = {
+            price:  q.regularMarketPrice,
+            chgPct: q.regularMarketChangePercent,
+          };
+        });
+        applyTicker(data);
+        console.log('[QuadraAI] Live prices loaded ✓');
+      } catch (err) {
+        console.warn('[QuadraAI] Live price fetch failed, using static fallback.', err.message);
+        // Static fallback values so ticker still scrolls
+        applyTicker({
+          '^NSEI':       { price: 24853.15, chgPct: 0.42 },
+          '^BSESN':      { price: 81721.08, chgPct: 0.38 },
+          '^NSEBANK':    { price: 52340.50, chgPct: -0.12 },
+          'RELIANCE.NS': { price: 2987.45,  chgPct: 1.05 },
+          'TCS.NS':      { price: 4210.30,  chgPct: 0.73 },
+          'INFY.NS':     { price: 1895.60,  chgPct: -0.29 },
+          'HDFCBANK.NS': { price: 1742.80,  chgPct: 0.64 },
+          'USDINR=X':    { price: 83.42,    chgPct: -0.08 },
+          'GC=F':        { price: 2320.50,  chgPct: 0.31 },
+          'CL=F':        { price: 82.14,    chgPct: -0.55 },
+        });
+      }
+    }
+
+    // Fetch on load, then refresh every 90 seconds
+    fetchLivePrices();
+    setInterval(fetchLivePrices, 90000);
+
+    // Initial duplicate for seamless loop (before data loads)
+    document.addEventListener('DOMContentLoaded', duplicateTicker);
+  </script>
+
+</body>
+</html>
